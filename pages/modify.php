@@ -17,15 +17,27 @@
             if ($flag)
             {
                 file_put_contents('../db/users', serialize($account));
-                header('Location: index.php');
+                echo "<script>window.location.href = '../index.php';</script>";
                 exit();
             }
             else
-                //Antoine error management
+            {
+                echo "<script type='text/javascript'>alert('Identifiants incorrects');</script>";
+                echo "<script>window.location.href = './modify.html';</script>";
+                exit();
+            }
         }
         else
-            //Antoine error management
+        {
+            echo "<script type='text/javascript'>alert('Identifiants incorrects');</script>";
+            echo "<script>window.location.href = './modify.html';</script>";
+            exit();
+        }
     }
     else
-        //Antoine error management
+    {
+        echo "<script type='text/javascript'>alert('Identifiants incorrects');</script>";
+        echo "<script>window.location.href = './modify.html';</script>";
+        exit();
+    }
 ?>

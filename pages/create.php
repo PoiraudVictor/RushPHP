@@ -14,7 +14,11 @@
             }
         }
         if ($flag)
-            echo "<p style='color: red'>ERROR</p>";
+        {
+            echo "<script type='text/javascript'>alert('Cet login est déjà utilisé');</script>";
+            echo "<script>window.location.href = './signup.html';</script>";
+            exit();
+        }
         else
         {
             $user["login"] = $_POST["login"];

@@ -15,7 +15,11 @@
             }
         }
         if ($flag)
-            echo "<p style='color: red'>ERROR</p>";
+        {
+            echo "<script type='text/javascript'>alert('Erreur lors de la creation du produit');</script>";
+            echo "<script>window.location.href = './admin.html';</script>";
+            exit();
+        }
         else
         {
             $product["product_name"] = $_POST["product_name"];
@@ -27,7 +31,7 @@
             $product["cat_baselayer"] = $_POST["cat_baselayer"];
             $products[] = $product;
             file_put_contents("../db/products", serialize($products));
-            header("Location: ../admin.html");
+            echo "<script>window.location.href = './admin.html';</script>";
             exit();
         }
     }
