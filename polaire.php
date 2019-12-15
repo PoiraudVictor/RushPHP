@@ -48,46 +48,6 @@
                         }
                     }
                 ?>
-                <?php
-                    $content = file_get_contents("db/products");
-                    $products = unserialize($content);
-                    foreach ($products as $key => $val)
-                    {
-                        if ($products[$key]['cat_baselayer'] == "oui") {
-                            echo '<li>';
-                            echo '<img src="'.$products[$key]['image_url'].'">';
-                            echo '<p class="product-name">'.$products[$key]['product_name'].'</p>';
-                            echo '<p class="product-price">'.$products[$key]['prix'].'€</p>';
-                            echo '</li>';
-                        }
-                    }
-                ?>
-                <?php
-                    $content = file_get_contents("db/products");
-                    $products = unserialize($content);
-                    foreach ($products as $key => $val)
-                    {
-                        if ($products[$key]['cat_tshirt'] == "oui") {
-                            echo '<li>';
-                            echo '<img src="'.$products[$key]['image_url'].'">';
-                            echo '<p class="product-name">'.$products[$key]['product_name'].'</p>';
-                            echo '<p class="product-price">'.$products[$key]['prix'].'€</p>';
-                            echo '</li>';
-                        }
-                    }
-                ?>
-                <?php
-                    $content = file_get_contents("db/products");
-                    $products = unserialize($content);
-                        foreach ($products as $key => $val)
-                        {
-                            echo '<li>';
-                            echo '<img src="'.$products[$key]['image_url'].'">';
-                            echo '<p class="product-name">'.$products[$key]['product_name'].'</p>';
-                            echo '<p class="product-price">'.$products[$key]['prix'].'€</p>';
-                            echo '</li>';
-                        }
-                ?>
             </ul>
         </div>
     </section>
